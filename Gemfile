@@ -36,6 +36,7 @@ gem 'active_model_serializers'
 gem 'faraday'
 gem "awesome_print", require:"ap"
 gem "omniauth-google-oauth2", "~> 0.2.1"
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
