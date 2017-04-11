@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'active_model_serializers'
 gem 'faraday'
+gem "awesome_print", require:"ap"
+gem "omniauth-google-oauth2", "~> 0.2.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
