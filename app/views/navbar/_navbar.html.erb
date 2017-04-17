@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -6,15 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Droplet</a>
+      <% if current_user %>
+        <a class="navbar-brand" href="/dashboard">Droplet</a>
+      <% else %>
+        <a class="navbar-brand" href="/">Droplet</a>
+      <% end %>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
+        <li ><a href="/dashboard">Home</a></li>
+        <li><a href="/stations">Monitoring Stations</a></li>
         <li><a href="#">Page 2</a></li>
         <li><a href="#">Page 3</a></li>
       </ul>
+
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> <%= current_user.name %></a></li>

@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def fingerprint(data)
+    Digest::MD5.digest(data.to_json)
+  end
 end

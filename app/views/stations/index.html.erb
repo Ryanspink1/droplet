@@ -1,0 +1,46 @@
+<h1>Stations</h1>
+<!-- <div class="search">
+  <%= form_tag stations_path, :method => "get"  do %>
+    <%= label_tag 'Ph'%>
+    <%= check_box_tag "PH", params[:ph], value:1  %>
+    <%= submit_tag "Search", name: nil %>
+  <% end %>
+</div> -->
+<div class="search">
+  <%= form_tag "/stations", remote:true, :method=>'get', id:'search' do %>
+    <%= label_tag 'Ph'%>
+    <%= check_box_tag "PH", params[:ph], value:1  %>
+    <%= submit_tag "Search", name: nil %>
+  <% end %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Site Name</th>
+      <th>Temperature</th>
+      <th>Ph</th>
+    </tr>
+  </thead>
+  <tbody id="entries">
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
