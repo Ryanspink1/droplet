@@ -10,6 +10,7 @@
   <%= form_tag "/stations", remote:true, :method=>'get', id:'search' do %>
     <%= label_tag 'Ph'%>
     <%= check_box_tag "PH", params[:ph], value:1  %>
+    <%= select_tag :state, options_for_select(us_states), id:'dropdown' %>
     <%= submit_tag "Search", name: nil %>
   <% end %>
 </div>
@@ -17,30 +18,26 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <% n = 0 %>
+      <th>#</th>
       <th>Date</th>
       <th>Site Name</th>
       <th>Temperature</th>
-      <th>Ph</th>
+      <!-- <th>Ph</th> -->
     </tr>
   </thead>
+    <% cache(json_fingerprint(@stations) + "list") do %>
   <tbody id="entries">
+    <% @stations.each do |station| %>
+    <% n = n + 1 %>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th> <%= n %></th>
+      <th> <%= Time.new(station.values[0][:value][0][:dateTime]).strftime("%m/%d/%Y") %></th>
+      <th> <%= station.sourceInfo[:siteName] %></th>
+      <th> <%= station.values[0][:value][0][:value]%> </th>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <% end %>
+
   </tbody>
+    <% end %>
 </table>

@@ -3,6 +3,7 @@ class StationsController < ApplicationController
 
   def index
     # byebug
-    @stations = SensorStation.stations
+    @stations = SensorStation.stations#(params[:state])
+    # @presenter = Presenter.new
   end
 end
