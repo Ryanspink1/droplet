@@ -55,4 +55,26 @@ module StationsHelper
       ['Wyoming', 'WY']
     ]
   end
+
+  def water_parameters
+    [
+      ["Temperature", "00010"],
+      ["pH", "00400"],
+      ["Dissolved Oxygen", "00300"],
+      ["Specific Conductivity", "00095"],
+      ["Discharge", "00060"]
+    ]
+  end
+
+  def siteType
+    [
+      ["All", "ALL"],
+      ["Stream", "ST"],
+      ["Lake", "LK"],
+      ["Estuary", "ES"],
+      ["Ocean", "OC"],
+      ["Spring", "SP"],
+      ["Well", "GW"]
+    ]
+  end
 end
