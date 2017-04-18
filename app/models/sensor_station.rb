@@ -1,6 +1,6 @@
 class SensorStation < OpenStruct
 
-  def self.all_stations
+  def self.stations#(state)
     UsgsService.new.water_parameters[:value][:timeSeries].map do |station|
       SensorStation.new(station)
     end

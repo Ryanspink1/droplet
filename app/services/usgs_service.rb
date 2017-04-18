@@ -2,12 +2,12 @@ class UsgsService
   attr_reader :connection
 
   def initialize
-    @connection = Faraday.new("https://waterservices.usgs.gov/nwis/iv/?format=json&stateCd=co&parameterCd=00010,00400&siteStatus=all")
+    @connection = Faraday.new("https://waterservices.usgs.gov/")
   end
 
 
-  def water_parameters
-    parse(@connection.get)
+  def water_parameters#(state)#(state, parameter, period )
+    parse(@connection.get("nwis/iv/?format=json&stateCd=CO&parameterCd=00010,00400&siteStatus=all"))
   end
 
 

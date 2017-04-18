@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ .jumbotron_home_text {
+   text-align: center;
+ }
+ .search-box{
+   text-align: center;
+ }
+
+/*.search {
+  text-align: right;
+}*/
+
+.station_header {
+  text-align: center;
+}
+
+.col-center{
+  width: 1200px;
+  margin:0 auto;
+}

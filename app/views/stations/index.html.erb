@@ -1,0 +1,41 @@
+<h1 class="station_header">Stations</h1>
+<!-- <div class="search">
+  <%= form_tag stations_path, :method => "get"  do %>
+    <%= label_tag 'Ph'%>
+    <%= check_box_tag "PH", params[:ph], value:1  %>
+    <%= submit_tag "Search", name: nil %>
+  <% end %>
+</div> -->
+<div class="search-box">
+  <div class="search">
+    <%= form_tag "/stations", remote:true, :method=>'get', id:'search' do %>
+      <%= label_tag 'Select Parameter:'%>
+      <%= select_tag :state, options_for_select(water_parameters), id:'params-dropdown' %><br>
+      <%= label_tag 'Select Site Type:'%>
+      <%= select_tag :state, options_for_select(siteType), id:'site-type-dropdown' %><br>
+      <%= label_tag 'Select State:'%>
+      <%= select_tag :state, options_for_select(us_states), id:'state-dropdown' %><br>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="col-center">
+<table class="table table-striped">
+  <thead>
+    <tr id=station-table-headers>
+      <% n = 0 %>
+      <th>#</th>
+      <th>Date</th>
+      <th>Site Name</th>
+      <th id="dynamic-table-head">Choose a parameter</th>
+    </tr>
+  </thead>
+    <% cache(json_fingerprint(@stations) + "list") do %>
+  <tbody id="entries">
+
+  </tbody>
+    <% end %>
+</table>
+</div>
