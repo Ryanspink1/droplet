@@ -6,10 +6,9 @@ class UsgsService
   end
 
 
-  def water_parameters#(state)#(state, parameter, period )
+  def water_parameters
     parse(@connection.get("nwis/iv/?format=json&stateCd=CO&parameterCd=00010,00400&siteStatus=all"))
   end
-
 
 private
 

@@ -20,6 +20,9 @@
  .search-box{
    text-align: center;
  }
+ .search-by-date-box{
+   text-align: center;
+ }
 
 /*.search {
   text-align: right;
@@ -32,4 +35,8 @@
 .col-center{
   width: 1200px;
   margin:0 auto;
+}
+
+.show-row-wrap {
+  margin-top: 50px;
 }
