@@ -1,6 +1,5 @@
 var API = 'https://waterservices.usgs.gov/'
 
-
 var tempGraphAxes = {
   dataX: [],
   dataY: []
@@ -21,8 +20,6 @@ var dischargeGraphAxes = {
   dataX: [],
   dataY: []
 }
-
-
 
 var printShowTemperature = function(data){
   $('#show-temperature').html('');
@@ -72,7 +69,6 @@ var printShowTemperature = function(data){
   });
   $('#temp-graph-script').add(tempGraphParams)
 }
-
 
 var printShowPh = function(data){
   $('#show-ph').html('');
@@ -220,6 +216,7 @@ var printShowSpecificConductivity = function(data){
   });
   $('#conductivity-graph-script').add(oxygenGraphParams)
 }
+
 var printShowDischarge = function(data){
   $('#show-discharge').html('');
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
@@ -283,7 +280,6 @@ var sortWaterParams = function(data){
   }
 }
 
-
 var connection = function(i) {
   return $.ajax({
     url: API + "nwis/iv/?format=json&sites=" + window.location.pathname.substr(10,19) + "&period=P" + $('#params-date').val() + "D" + "&parameterCd=" + waterParameters[i] + "&siteStatus=all",
@@ -312,11 +308,8 @@ var iterator = function(){
   }
 }
 
-
 var waterParameters = ["00010","00400","00300","00095","00060"];
 var waterParametersLength = waterParameters.length;
-
-
 
 $(document).ready(function(){
   if(window.location.pathname.substr(0,10) == "/stations/"){
