@@ -38,6 +38,9 @@
 .station_header {
   text-align: center;
 }
+.station-show-header {
+  text-align: center;
+}
 
 .col-center{
   width: 1200px;

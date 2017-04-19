@@ -1,7 +1,9 @@
+<h1 class="station-show-header"></h1><br>
+
 <div class="search-by-date-box">
   <div class="search-by-date">
     <%= form_tag "/stations", remote:true, :method=>'get', id:'date-search' do %>
-      <%= label_tag 'Select Number of Days to See Info For:'%>
+      <%= label_tag 'Select Number of Days to View Info For:'%><br>
       <%= text_field_tag :days,1, id:'params-date' %>
       <%= submit_tag "Search", name: nil %>
     <% end %>
@@ -9,84 +11,27 @@
 </div>
 
 <div class="show-row-wrap">
-<div class="show-top-row" style="display:none">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <div id="temp-graph" width:400px; height:400px;></div>
-        <script id = "temp-graph-script">
-        </script>
-      </div>
-
-    <div class="col-md-4 col-md-offset-1">
-      <div class="pre-scrollable">
-        <table class="table table-striped">
-          <thead>
-            <tr id=station-show-table-headers>
-              <th>#</th>
-              <th>Date</th>
-              <th id="temperature-dynamic-table-head">Temperature</th>
-            </tr>
-          </thead>
-          <tbody id="show-temperature">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-<div class="show-row-wrap">
-<div class="show-second-row" style="display:none">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <div id="ph-graph" width:400px; height:400px;></div>
-        <script id = "ph-graph-script">
-        </script>
-      </div>
-
-    <div class="col-md-4 col-md-offset-1">
-      <div class="pre-scrollable">
-        <table class="table table-striped">
-          <thead>
-            <tr id=station-show-table-headers>
-              <th>#</th>
-              <th>Date</th>
-              <th id="ph-dynamic-table-head">pH</th>
-            </tr>
-          </thead>
-          <tbody id="show-ph">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-<div class="show-row-wrap">
-<div class="show-third-row" style="display:none">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <div id="oxygen-graph" width:400px; height:400px;></div>
-        <script id = "oxygen-graph-script">
-        </script>
-      </div>
-    <div class="col-md-4 col-md-offset-1">
-      <div class="pre-scrollable">
-        <table class="table table-striped">
-          <thead>
-            <tr id=station-show-table-headers>
-              <th>#</th>
-              <th>Date</th>
-              <th id="dissolved-oxygen-dynamic-table-head">Dissolved Oxygen mg/L</th>
-            </tr>
-          </thead>
-          <tbody id="show-dissolved-oxygen">
-          </tbody>
-        </table>
+  <div class="show-top-row" style="display:none">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <div id="temp-graph" width:400px; height:400px;></div>
+          <script id = "temp-graph-script">
+          </script>
+        </div>
+      <div class="col-md-4 col-md-offset-1">
+        <div class="pre-scrollable">
+          <table class="table table-striped">
+            <thead>
+              <tr id=station-show-table-headers>
+                <th>#</th>
+                <th>Date</th>
+                <th id="temperature-dynamic-table-head">Temperature</th>
+              </tr>
+            </thead>
+            <tbody id="show-temperature">
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -94,26 +39,27 @@
 </div>
 
 <div class="show-row-wrap">
-<div class="show-fourth-row" style="display:none">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <div id="conductivity-graph" width:400px; height:400px;></div>
-        <script id = "conductivity-graph-script">
-        </script>
-      </div>
-    <div class="col-md-4 col-md-offset-1">
-      <div class="pre-scrollable">
-        <table class="table table-striped">
-          <thead>
-            <tr id=station-show-table-headers>
-              <th>#</th>
-              <th>Date</th>
-              <th id="specific-conductivity-dynamic-table-head">Specific Conductance uS/cm @77f</th>
-            </tr>
-          </thead>
-          <tbody id="show-specific-conductivity">
-          </tbody>
-        </table>
+  <div class="show-second-row" style="display:none">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <div id="ph-graph" width:400px; height:400px;></div>
+          <script id = "ph-graph-script">
+          </script>
+        </div>
+      <div class="col-md-4 col-md-offset-1">
+        <div class="pre-scrollable">
+          <table class="table table-striped">
+            <thead>
+              <tr id=station-show-table-headers>
+                <th>#</th>
+                <th>Date</th>
+                <th id="ph-dynamic-table-head">pH</th>
+              </tr>
+            </thead>
+            <tbody id="show-ph">
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -121,28 +67,82 @@
 </div>
 
 <div class="show-row-wrap">
-<div class="show-fifth-row" style="display:none">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-1">
-      <div id="discharge-graph" width:400px; height:400px;></div>
-        <script id = "discharge-graph-script">
-        </script>
-      </div>
-    <div class="col-md-4 col-md-offset-1">
-      <div class="pre-scrollable">
-        <table class="table table-striped">
-          <thead>
-            <tr id=station-show-table-headers>
-              <th>#</th>
-              <th>Date</th>
-              <th id="discharge-dynamic-table-head">Discharge, cubic feet per second  </th>
-            </tr>
-          </thead>
-          <tbody id="show-discharge">
-          </tbody>
-        </table>
+  <div class="show-third-row" style="display:none">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <div id="oxygen-graph" width:400px; height:400px;></div>
+          <script id = "oxygen-graph-script">
+          </script>
+        </div>
+      <div class="col-md-4 col-md-offset-1">
+        <div class="pre-scrollable">
+          <table class="table table-striped">
+            <thead>
+              <tr id=station-show-table-headers>
+                <th>#</th>
+                <th>Date</th>
+                <th id="dissolved-oxygen-dynamic-table-head">Dissolved Oxygen mg/L</th>
+              </tr>
+            </thead>
+            <tbody id="show-dissolved-oxygen">
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="show-row-wrap">
+  <div class="show-fourth-row" style="display:none">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <div id="conductivity-graph" width:400px; height:400px;></div>
+          <script id = "conductivity-graph-script">
+          </script>
+        </div>
+      <div class="col-md-4 col-md-offset-1">
+        <div class="pre-scrollable">
+          <table class="table table-striped">
+            <thead>
+              <tr id=station-show-table-headers>
+                <th>#</th>
+                <th>Date</th>
+                <th id="specific-conductivity-dynamic-table-head">Specific Conductance uS/cm @77f</th>
+              </tr>
+            </thead>
+            <tbody id="show-specific-conductivity">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="show-row-wrap">
+  <div class="show-fifth-row" style="display:none">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+        <div id="discharge-graph" width:400px; height:400px;></div>
+          <script id = "discharge-graph-script">
+          </script>
+        </div>
+      <div class="col-md-4 col-md-offset-1">
+        <div class="pre-scrollable">
+          <table class="table table-striped">
+            <thead>
+              <tr id=station-show-table-headers>
+                <th>#</th>
+                <th>Date</th>
+                <th id="discharge-dynamic-table-head">Discharge, cubic feet per second  </th>
+              </tr>
+            </thead>
+            <tbody id="show-discharge">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
