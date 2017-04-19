@@ -22,6 +22,8 @@ var dischargeGraphAxes = {
 }
 
 var printShowTemperature = function(data){
+  $('.station-show-header').html('');
+  $('.station-show-header').append('Station: '+data.value.timeSeries[0].sourceInfo.siteName);
   $('#show-temperature').html('');
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
     if (data.value.timeSeries[0].values[0].value[i].value == '-999999'){
