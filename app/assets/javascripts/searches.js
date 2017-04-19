@@ -6,22 +6,23 @@ var printTemperature = function(data) {
     .innerHTML = "";
   $('#dynamic-table-head')[0]
     .innerHTML = "Temperature";
-
   for (var i=0; i<data.value.timeSeries.length; i++) {
     if (data.value.timeSeries[i].values[0].value[0].value == '-999999') {
       $('#entries')
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[1].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[1].sourceInfo.siteName + '</a>' + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
-                '/tr')
+                '</tr>')
     }else{
       $('#entries')
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + Math.floor(data.value.timeSeries[i].values[0].value[0].value * 9/5 + 32) + '</th>' +
                 '/tr')
     }
@@ -39,7 +40,8 @@ var printPh = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -47,7 +49,8 @@ var printPh = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
@@ -65,7 +68,8 @@ var printDissolvedOxygen = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -73,7 +77,8 @@ var printDissolvedOxygen = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
@@ -91,7 +96,8 @@ var printSpecificConductance = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -99,7 +105,8 @@ var printSpecificConductance = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
@@ -117,7 +124,8 @@ var printDischarge = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -125,39 +133,13 @@ var printDischarge = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
+                '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
+                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
   }
 }
-// var populateAllStations = function(data) {
-//   debugger;
-//   $('#entries').html('');
-//   $('#dynamic-table-head')[0]
-//     .innerHTML = "";
-//   $('#dynamic-table-head')[0]
-//     .innerHTML = "Ph";
-//   for (var i=0; i<data.value.timeSeries.length; i++) {
-//     if (data.value.timeSeries[i].values[0].value[0].value == '-999999') {
-//       $('#entries')
-//         .append('<tr class="entry">' +
-//                 '<th>' + (i + 1) + '</th>' +
-//                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-//                 '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
-//                 '<th>' + 'N/A' + '</th>' +
-//                 '/tr')
-//     }else{
-//       $('#entries')
-//         .append('<tr class="entry">' +
-//                 '<th>' + (i + 1) + '</th>' +
-//                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-//                 '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
-//                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
-//                 '/tr')
-//     }
-//   }
-// }
 
 var sortOutput = function(data) {
   if ($('#params-dropdown').val() == "00010") {
@@ -173,7 +155,6 @@ var sortOutput = function(data) {
   }
 }
 
-
 var searchUSGS = function() {
   return $.ajax({
     url: API + "nwis/iv/?format=json&stateCd=" + $('#state-dropdown').val() + "&parameterCd=" + $('#params-dropdown').val() + "&siteStatus=all",
@@ -184,6 +165,7 @@ var searchUSGS = function() {
     console.error(error)
 });
 }
+
 var searchBySite = function() {
   return $.ajax({
     url: API + "nwis/iv/?format=json&stateCd=" + $('#state-dropdown').val() + "&parameterCd=" + $('#params-dropdown').val() + "&siteType=" + $('#site-type-dropdown').val() + "&siteStatus=all",
@@ -195,17 +177,6 @@ var searchBySite = function() {
 });
 }
 
-// var searchAll = function() {
-//   return $.ajax({
-//     url: API + "nwis/iv/?format=json&stateCd=" + $('#state-dropdown').val() + "&parameterCd=" + $('#params-dropdown').val() + "&siteStatus=all",
-//     method:'GET'
-//   })
-//   .done(populateAllStations)
-//   .fail(function(error){
-//     console.error(error)
-// });
-// }
-
 var sortParams = function(){
     if( $('#site-type-dropdown').val() == "ALL"){
       searchUSGS()
@@ -214,35 +185,6 @@ var sortParams = function(){
     }
   }
 
-
-
-
 $(document).ready(function(){
-  // #tabs for CRUD actions activated
-
   $('#search').on('submit', sortParams)
-
-  // $('#search').on('submit', function(){
-  //   if("$('#site-type-dropdown').val()" == "ALL"){
-  //     debugger;
-  //     searchUSGS()
-  //   }else{
-  //     searchBySite()
-  //   }
-  // });
-
-  // if("$('#site-type-dropdown').val()" == "ALL"){
-  //   $('#search').on('submit', searchUSGS);
-  // }else{
-  //   $('#search').on('submit',searchUSGSBySite);
-  // }
-
-
-
-
-  // if(window.location.pathname == "/stations"){
-  //   searchAll()
-  // };
-  // getAllPosts();
-
 });
