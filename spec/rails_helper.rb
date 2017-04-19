@@ -8,7 +8,14 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'simplecov'
+# require 'capybara/dsl'
+# require 'capybara/poltergeist'
+# Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :webkit
 SimpleCov.start 'rails'
+
+
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -31,6 +38,7 @@ SimpleCov.start 'rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+   config.include Capybara::DSL
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
