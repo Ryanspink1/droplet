@@ -12,7 +12,6 @@ var printTemperature = function(data) {
         .append('<tr class="entry">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[1].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[1].sourceInfo.siteName + '</a>' + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '</tr>')
@@ -22,7 +21,6 @@ var printTemperature = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + Math.floor(data.value.timeSeries[i].values[0].value[0].value * 9/5 + 32) + '</th>' +
                 '/tr')
     }
@@ -41,7 +39,6 @@ var printPh = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -50,7 +47,6 @@ var printPh = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
@@ -69,7 +65,6 @@ var printDissolvedOxygen = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -78,7 +73,6 @@ var printDissolvedOxygen = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
@@ -97,7 +91,6 @@ var printSpecificConductance = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -106,7 +99,6 @@ var printSpecificConductance = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }
@@ -125,7 +117,6 @@ var printDischarge = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + 'N/A' + '</th>' +
                 '/tr')
     }else{
@@ -134,7 +125,6 @@ var printDischarge = function(data) {
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[i].values[0].value[0].dateTime).toUTCString() + '</th>' +
                 '<th>' + '<a href=/stations/'+data.value.timeSeries[i].sourceInfo.siteCode[0].value+ '>' + data.value.timeSeries[i].sourceInfo.siteName + '</a>' + '</th>' +
-                // '<th>' + data.value.timeSeries[i].sourceInfo.siteName + '</th>' +
                 '<th>' + data.value.timeSeries[i].values[0].value[0].value + '</th>' +
                 '/tr')
     }

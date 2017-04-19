@@ -16,6 +16,41 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+module WaitForAjax
+  def wait_for_ajax
+    Timeout.timeout(Capybara.default_max_wait_time) do
+      loop until finished_all_ajax_requests?
+    end
+  end
+
+  def finished_all_ajax_requests?
+    page.evaluate_script('jQuery.active').zero?
+  end
+end
+
+  def stub_omniauth
+      OmniAuth.config.test_mode = true
+
+      omniauth_hash = OmniAuth::AuthHash.new({
+        provider: "google_oauth2",
+        uid: "12345678910",
+        info: {
+          email: "jabron@jabron.com",
+          name: "Ryan Spink"
+        },
+        credentials: {
+          oauth_token: "abcdefg12345",
+          # refresh_token: "12345abcdefg",
+          expires_at: DateTime.now,
+        }
+      })
+      OmniAuth.config.add_mock(:google_oauth2, omniauth_hash)
+    end
+
+RSpec.configure do |config|
+  config.include WaitForAjax
+end
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
