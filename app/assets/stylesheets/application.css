@@ -13,6 +13,20 @@
  *= require_tree .
  *= require_self
  */
+#dashboard-message{
+  text-align: center;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 5px;
+  margin-top: 400px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  font-size: 17px;
+  font-weight: 900;
+  text-indent: 20px;
+
+}
+
  .jumbotron_home_text{
    text-align: center;
  }
