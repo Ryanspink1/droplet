@@ -22,7 +22,7 @@
         1,
         null,
         1,
-        19,
+        23,
         null,
         null,
         1,
@@ -43,18 +43,18 @@
         null,
         null
       ],
+      "/Users/RS/Desktop/projects/mod_3/droplet/droplet/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/RS/Desktop/projects/mod_3/droplet/droplet/app/controllers/home_controller.rb": [
         1,
         null,
         1,
         null,
-        null,
-        null
-      ],
-      "/Users/RS/Desktop/projects/mod_3/droplet/droplet/app/controllers/dashboard_controller.rb": [
-        1,
-        1,
-        1,
         null,
         null
       ],
@@ -182,6 +182,6 @@
         0
       ]
     },
-    "timestamp": 1492641602
+    "timestamp": 1492659481
   }
 }

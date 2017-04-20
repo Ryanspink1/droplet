@@ -23,7 +23,7 @@ var dischargeGraphAxes = {
 
 var printShowTemperature = function(data){
   $('.station-show-header').html('');
-  $('.station-show-header').append('Station: '+data.value.timeSeries[0].sourceInfo.siteName);
+  $('.station-show-header').append(data.value.timeSeries[0].sourceInfo.siteName);
   $('#show-temperature').html('');
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
     if (data.value.timeSeries[0].values[0].value[i].value == '-999999'){
@@ -31,7 +31,7 @@ var printShowTemperature = function(data){
         .append('<tr class="temp">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + 'N/A' + '</th>' +
+                '<th class="text-center"> ' + 'N/A' + '</th>' +
                 '</tr>')
    }else{
       $('.show-top-row').css("display", "inline");
@@ -41,7 +41,7 @@ var printShowTemperature = function(data){
         .append('<tr class="temp">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString() + '</th>' +
-                '<th>' +  Math.floor(data.value.timeSeries[0].values[0].value[i].value * 9/5 + 32) + '</th>' +
+                '<th class="text-center">' +  Math.floor(data.value.timeSeries[0].values[0].value[i].value * 9/5 + 32) + '</th>' +
                 '</tr>'
       )
     }
@@ -77,20 +77,20 @@ var printShowPh = function(data){
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
     if (data.value.timeSeries[0].values[0].value[i].value == '-999999'){
       $('#show-ph')
-        .append('<tr class="temp">' +
+        .append('<tr class="pH">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + 'N/A' + '</th>' +
+                '<th class="text-center">' + 'N/A' + '</th>' +
                 '</tr>')
    }else{
      $('.show-second-row').css("display", "inline");
      phGraphAxes.dataY.push(parseFloat(data.value.timeSeries[0].values[0].value[i].value));
      phGraphAxes.dataX.push(new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString());
       $('#show-ph')
-        .append('<tr class="temp">' +
+        .append('<tr class="pH">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString() + '</th>' +
-                '<th>' +  data.value.timeSeries[0].values[0].value[i].value + '</th>' +
+                '<th class="text-center">' +  data.value.timeSeries[0].values[0].value[i].value + '</th>' +
                 '</tr>'
       )
     }
@@ -126,20 +126,20 @@ var printShowDissolvedOxygen = function(data){
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
     if (data.value.timeSeries[0].values[0].value[i].value == '-999999'){
       $('#show-dissolved-oxygen')
-        .append('<tr class="temp">' +
+        .append('<tr class="dO">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + 'N/A' + '</th>' +
+                '<th class="text-center">' + 'N/A' + '</th>' +
                 '</tr>')
    }else{
      $('.show-third-row').css("display", "inline");
      oxygenGraphAxes.dataY.push(parseFloat(data.value.timeSeries[0].values[0].value[i].value));
      oxygenGraphAxes.dataX.push(new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString());
       $('#show-dissolved-oxygen')
-        .append('<tr class="temp">' +
+        .append('<tr class="dO">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString() + '</th>' +
-                '<th>' +  data.value.timeSeries[0].values[0].value[i].value + '</th>' +
+                '<th class="text-center">' +  data.value.timeSeries[0].values[0].value[i].value + '</th>' +
                 '</tr>'
       )
     }
@@ -175,20 +175,20 @@ var printShowSpecificConductivity = function(data){
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
     if (data.value.timeSeries[0].values[0].value[i].value == '-999999'){
       $('#show-specific-conductivity')
-        .append('<tr class="temp">' +
+        .append('<tr class="cond">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + 'N/A' + '</th>' +
+                '<th class="text-center">' + 'N/A' + '</th>' +
                 '</tr>')
    }else{
      conductivityGraphAxes.dataY.push(parseFloat(data.value.timeSeries[0].values[0].value[i].value));
      conductivityGraphAxes.dataX.push(new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString());
      $('.show-fourth-row').css("display", "inline");
       $('#show-specific-conductivity')
-        .append('<tr class="temp">' +
+        .append('<tr class="cond">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString() + '</th>' +
-                '<th>' +  Math.floor(data.value.timeSeries[0].values[0].value[i].value) + '</th>' +
+                '<th class="text-center">' +  Math.floor(data.value.timeSeries[0].values[0].value[i].value) + '</th>' +
                 '</tr>'
       )
     }
@@ -224,20 +224,20 @@ var printShowDischarge = function(data){
   for(var i=0; i<data.value.timeSeries[0].values[0].value.length; i++){
     if (data.value.timeSeries[0].values[0].value[i].value == '-999999'){
       $('#show-discharge')
-        .append('<tr class="temp">' +
+        .append('<tr class="dis">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].dateTime).toUTCString() + '</th>' +
-                '<th>' + 'N/A' + '</th>' +
+                '<th class="text-center">' + 'N/A' + '</th>' +
                 '</tr>')
    }else{
      dischargeGraphAxes.dataY.push(parseFloat(data.value.timeSeries[0].values[0].value[i].value));
      dischargeGraphAxes.dataX.push(new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString());
      $('.show-fifth-row').css("display", "inline");
       $('#show-discharge')
-        .append('<tr class="temp">' +
+        .append('<tr class="dis">' +
                 '<th>' + (i + 1) + '</th>' +
                 '<th>' + new Date(data.value.timeSeries[0].values[0].value[i].dateTime).toUTCString() + '</th>' +
-                '<th>' + data.value.timeSeries[0].values[0].value[i].value + '</th>' +
+                '<th class="text-center">' + data.value.timeSeries[0].values[0].value[i].value + '</th>' +
                 '</tr>'
       )
     }
