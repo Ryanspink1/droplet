@@ -3,7 +3,7 @@
 <div class="search-by-date-box">
   <div class="search-by-date">
     <%= form_tag "/stations", remote:true, :method=>'get', id:'date-search' do %>
-      <%= label_tag 'Select Number of Days to View Info For:'%><br>
+      <%= label_tag 'Select Number of Days prior of Data:'%><br>
       <%= text_field_tag :days,1, id:'params-date' %>
       <%= submit_tag "Search", name: nil %>
     <% end %>
