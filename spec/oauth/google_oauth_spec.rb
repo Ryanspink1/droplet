@@ -12,8 +12,8 @@ RSpec.feature "user logs in" do
   end
 end
 
-RSpec.feature "user logs in" do
-  scenario "using google oauth2" do
+RSpec.feature "user logs out" do
+  scenario "they are redirected to the home page" do
     stub_omniauth
     visit root_path
     expect(page).to have_link("Login")
