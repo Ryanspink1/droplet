@@ -1,7 +1,7 @@
 require 'rails_helper'
 
   describe 'station show page' do
-    it 'shows data for each station' do
+    it 'shows data for each station', js: true do
 
       user = User.create(name:"Ryan")
 
@@ -9,6 +9,19 @@ require 'rails_helper'
 
       visit('/stations/02397530')
 
-      expect(page).to have_content("Select number of days to see info for:")
+      # expect(page).to have_content("Select number of days prior of data:")
+
+      # fill_in "days", with: "1"
+
+      # click_button "Search"
+
+      # wait_for_ajax
+
+      expect(page).to have_css('.temp')
+      expect(page).to have_css('.pH')
+      expect(page).to have_css('.dO')
+      expect(page).to have_css('.cond')
+      expect(page).to_not have_css('.dis')
+
     end
   end
